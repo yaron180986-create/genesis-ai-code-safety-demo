@@ -1,85 +1,143 @@
-# GENESIS AI Code Safety Gate — Public Demo
+# GENESIS AI Code Safety Gate
 
-This is a public-safe demo package.
-
-The real GENESIS core remains private.
+A public-safe demo showing how risky AI-generated code changes can be blocked before execution.
 
 ---
 
-## What it demonstrates
+## The Problem
 
-GENESIS checks AI-generated code changes before execution.
+AI coding tools can move fast — sometimes too fast.
 
-It returns:
-- **ALLOW** — change is safe to proceed
-- **REQUIRE APPROVAL** — human sign-off needed before execution
-- **BLOCK** — change stopped immediately, not executed
-
----
-
-## Why it matters
-
-AI coding tools can generate destructive edits that look harmless.
+They may generate code that looks harmless but can:
+- break exports
+- disable critical flows
+- replace working logic
+- introduce dead-code gates
+- create destructive changes before a human notices
 
 Example:
+
 ```js
 module.exports = null;
 ```
 
-That single line silently destroys a module's entire interface at runtime.
-
-GENESIS blocks it before execution.
+That single line silently destroys a module's entire public interface.  
+Your app won't crash immediately. It will just silently stop working.  
+And the AI that wrote it had no idea.
 
 ---
 
-## Run the demo
+## The Solution
+
+GENESIS sits between AI-generated code and execution.
+
+Every change is evaluated before it runs.  
+Every decision is explicit.
+
+| Decision | Meaning |
+|----------|---------|
+| `ALLOW` | Change is safe — proceed automatically |
+| `REQUIRE_APPROVAL` | Risky pattern detected — human sign-off required |
+| `BLOCK` | Destructive change stopped — not executed |
+
+---
+
+## Live Demo
 
 ```bash
+git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo.git
+cd genesis-ai-code-safety-demo
 npm install
-node scripts/genesis-demo.js examples/demo-danger.json
+```
+
+Run the scenarios:
+
+```bash
+npm run demo          # Safe helper addition → ALLOW
+npm run demo:danger   # module.exports = null → BLOCK
+npm run demo:dead-code  # if(false) gate → REQUIRE_APPROVAL
+```
+
+Or run directly:
+
+```bash
 node scripts/genesis-demo.js examples/demo-safe.json
+node scripts/genesis-demo.js examples/demo-danger.json
 node scripts/genesis-demo.js examples/demo-dead-code.json
 ```
 
-Or use the npm shortcuts:
+---
 
-```bash
-npm run demo
-npm run demo:safe
-npm run demo:danger
-npm run demo:dead-code
-```
+## Demo Scenarios
+
+| Scenario | Pattern | Decision |
+|----------|---------|----------|
+| `demo-safe.json` | Safe helper function added | `ALLOW` |
+| `demo-danger.json` | `module.exports = null` — export destruction | `BLOCK` |
+| `demo-dead-code.json` | `if(false)` — dead-code gate | `REQUIRE_APPROVAL` |
 
 ---
 
-## Demo scenarios
+## Who This Is For
 
-| File | Pattern | Decision |
-|------|---------|----------|
-| `demo-safe.json` | Safe helper addition | ALLOW |
-| `demo-danger.json` | `module.exports = null` | BLOCK |
-| `demo-dead-code.json` | `if(false)` dead-code gate | REQUIRE APPROVAL |
+**Developers** using AI coding assistants (Cursor, Copilot, Claude Code, etc.)  
+You've seen the AI make a change that looked fine — then broke something.  
+GENESIS gives you a safety layer without slowing down the flow.
+
+**Founders and engineering leads** building AI-assisted teams  
+You want your team to move fast with AI — but not break production.  
+GENESIS is the control layer that makes that safe.
+
+**AI tooling builders**  
+You're building on top of LLMs and need deterministic safety gates.  
+GENESIS is designed to plug in between generation and execution.
 
 ---
 
-## Important
+## What This Repo Is
 
-This repository does not include the private GENESIS core engine.
+This is a **public-safe demo shell**.
 
-It is a public demo and positioning package only.
+It demonstrates the GENESIS decision surface — the output layer that developers and integrators interact with.
 
-The production GENESIS system includes:
-- A private risk engine
-- An execution control layer
+The private GENESIS core includes:
 - A real-time AI diff analysis pipeline
-- An Electron-based developer panel
+- A private risk engine with pattern classification
+- An execution control layer
+- An Electron-based developer panel (Genesis Panel)
 
-None of those are present here.
+None of those are in this repository.  
+**GENESIS core is always private.**
+
+---
+
+## Architecture (Public View)
+
+```
+AI Tool Output
+      │
+      ▼
+┌─────────────────────┐
+│   GENESIS Safety    │  ← This demo shows this surface
+│   Gate (Decision)   │
+└─────────────────────┘
+      │
+   ALLOW / REQUIRE_APPROVAL / BLOCK
+      │
+      ▼
+ Execution Layer
+```
 
 ---
 
 ## Status
 
-Early MVP / feedback stage.
+Early MVP — actively seeking feedback from developers using AI coding tools.
 
-Contact: yaron180986@gmail.com
+If you work with AI-generated code at scale and want to talk:
+
+**Contact:** yaron180986@gmail.com
+
+---
+
+> GENESIS core is private. This repo is a public demo only.
