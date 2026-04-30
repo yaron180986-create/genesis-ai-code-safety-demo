@@ -60,6 +60,7 @@ The browser demo includes:
 - Custom input textarea
 
 > Note: This is a public-safe browser demo. The private GENESIS core is not included.
+> First simulated fix is free. Additional fixes require a paid pilot or setup.
 
 ---
 

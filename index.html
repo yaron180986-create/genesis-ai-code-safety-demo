@@ -7,319 +7,508 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg:           #070b14;
+      --surface:      #0c1020;
+      --surface-2:    #101624;
+      --border:       #1a2236;
+      --border-hover: #28344f;
+      --text-1:       #dde4f0;
+      --text-2:       #6b7a96;
+      --text-3:       #3d4a63;
+      --accent:       #4a7fe0;
+      --accent-dim:   rgba(74, 127, 224, 0.12);
+
+      --allow-border: #2a5c3c;
+      --allow-bg:     rgba(42, 92, 60, 0.07);
+      --allow-label:  #4ade80;
+      --allow-badge:  #166534;
+
+      --block-border: #7a2020;
+      --block-bg:     rgba(122, 32, 32, 0.07);
+      --block-label:  #f87171;
+      --block-badge:  #7f1d1d;
+
+      --review-border:#6b5010;
+      --review-bg:    rgba(107, 80, 16, 0.07);
+      --review-label: #fbbf24;
+      --review-badge: #78350f;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background: #0d1117;
-      color: #e6edf3;
+      background: var(--bg);
+      color: var(--text-1);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       min-height: 100vh;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    /* Header */
-    .header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-    .header h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #f0f6fc;
-      margin-bottom: 0.5rem;
-    }
-    .header p {
-      color: #8b949e;
-      font-size: 0.95rem;
+      padding: 3rem 1.25rem 4rem;
       line-height: 1.6;
     }
 
-    /* Warning banner */
-    .warning {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-left: 3px solid #f0883e;
-      border-radius: 6px;
-      padding: 0.75rem 1rem;
-      font-size: 0.85rem;
-      color: #f0883e;
-      margin-bottom: 2rem;
+    /* ── Layout ── */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    .header {
       text-align: center;
+      margin-bottom: 2.75rem;
     }
 
-    /* Card */
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .card h2 {
-      font-size: 1rem;
+    .header .eyebrow {
+      font-size: 0.7rem;
       font-weight: 600;
-      color: #f0f6fc;
-      margin-bottom: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.1rem;
     }
 
-    /* Preset buttons */
-    .presets {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 0;
+    .header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.15rem);
+      font-weight: 700;
+      color: #eef2fc;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.85rem;
+      line-height: 1.2;
     }
-    .preset-btn {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      border: 1px solid #30363d;
-      background: #21262d;
-      color: #e6edf3;
+
+    .header .slogan {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-1);
+      margin-bottom: 0.6rem;
+    }
+
+    .header .sub {
       font-size: 0.875rem;
-      cursor: pointer;
-      transition: background 0.15s, border-color 0.15s;
+      color: var(--text-2);
+      max-width: 480px;
+      margin: 0 auto 0.9rem;
     }
-    .preset-btn:hover { background: #30363d; border-color: #8b949e; }
-    .preset-btn.safe   { border-color: #238636; color: #3fb950; }
-    .preset-btn.safe:hover   { background: #0d2114; border-color: #3fb950; }
-    .preset-btn.danger { border-color: #da3633; color: #f85149; }
-    .preset-btn.danger:hover { background: #2d1317; border-color: #f85149; }
-    .preset-btn.warn   { border-color: #9e6a03; color: #d29922; }
-    .preset-btn.warn:hover   { background: #272115; border-color: #d29922; }
 
-    /* Textarea */
+    .header .trust-line {
+      font-size: 0.8rem;
+      color: var(--text-3);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Warning banner ── */
+    .notice {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 2px solid #4a7fe0;
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+      color: var(--text-2);
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+
+    /* ── Scenario selector ── */
+    .scenarios {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .scenario-pill {
+      flex: 1;
+      min-width: 150px;
+      padding: 0.65rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text-2);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+      line-height: 1.3;
+    }
+    .scenario-pill:hover {
+      background: var(--surface-2);
+      border-color: var(--border-hover);
+      color: var(--text-1);
+    }
+    .scenario-pill.active {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--text-1);
+    }
+    .scenario-pill .pill-label {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-3);
+      margin-top: 0.15rem;
+    }
+
+    /* ── Input card ── */
+    .input-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+
     textarea {
       width: 100%;
-      min-height: 120px;
-      background: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 6px;
-      color: #e6edf3;
+      min-height: 130px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text-1);
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 0.875rem;
-      padding: 0.75rem;
+      font-size: 0.83rem;
+      padding: 0.85rem 1rem;
       resize: vertical;
       outline: none;
-      transition: border-color 0.15s;
-      margin-top: 1rem;
+      transition: border-color 0.18s;
+      margin-bottom: 0.85rem;
+      line-height: 1.55;
     }
-    textarea:focus { border-color: #58a6ff; }
+    textarea:focus { border-color: var(--accent); }
+    textarea::placeholder { color: var(--text-3); }
 
-    /* Analyze button */
-    .analyze-btn {
+    .cta-btn {
       display: block;
       width: 100%;
-      margin-top: 0.75rem;
-      padding: 0.65rem 1rem;
-      border-radius: 6px;
+      padding: 0.78rem 1rem;
+      border-radius: 7px;
       border: none;
-      background: #238636;
-      color: #f0f6fc;
+      background: #1a3870;
+      background: linear-gradient(135deg, #1a3870 0%, #1e4890 100%);
+      color: #dde8ff;
       font-size: 0.9rem;
       font-weight: 600;
+      letter-spacing: 0.02em;
       cursor: pointer;
-      transition: background 0.15s;
+      transition: filter 0.18s, transform 0.12s;
     }
-    .analyze-btn:hover { background: #2ea043; }
+    .cta-btn:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+    .cta-btn:active { transform: translateY(0); }
 
-    /* Result panel */
+    .cta-note {
+      margin-top: 0.6rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-3);
+    }
+
+    /* ── Business boundary ── */
+    .boundary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 0.65rem 1rem;
+      font-size: 0.78rem;
+      color: var(--text-3);
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .boundary strong { color: var(--text-2); font-weight: 500; }
+
+    /* ── Result panel ── */
     .result {
-      display: none;
-      border-radius: 8px;
-      border: 1px solid #30363d;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 1.75rem;
       overflow: hidden;
-      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s, transform 0.25s;
+      pointer-events: none;
+      display: none;
     }
-    .result.visible { display: block; }
+    .result.visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
 
-    .result-header {
+    .result-top {
+      padding: 1rem 1.25rem 0.85rem;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      padding: 1rem 1.25rem;
     }
-    .result-header.allow  { background: #0d2114; border-bottom: 1px solid #238636; }
-    .result-header.block  { background: #2d1317; border-bottom: 1px solid #da3633; }
-    .result-header.review { background: #272115; border-bottom: 1px solid #9e6a03; }
+    .result-top.allow  { background: var(--allow-bg);  border-bottom-color: var(--allow-border); }
+    .result-top.block  { background: var(--block-bg);  border-bottom-color: var(--block-border); }
+    .result-top.review { background: var(--review-bg); border-bottom-color: var(--review-border); }
 
-    .badge {
-      font-size: 0.8rem;
+    .verdict-badge {
+      font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      padding: 0.2rem 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.55rem;
       border-radius: 4px;
+      flex-shrink: 0;
     }
-    .badge.allow  { background: #238636; color: #f0f6fc; }
-    .badge.block  { background: #da3633; color: #f0f6fc; }
-    .badge.review { background: #9e6a03; color: #f0f6fc; }
+    .verdict-badge.allow  { background: var(--allow-badge);  color: #bbf7d0; }
+    .verdict-badge.block  { background: var(--block-badge);  color: #fecaca; }
+    .verdict-badge.review { background: var(--review-badge); color: #fef3c7; }
 
-    .result-header .decision-label {
-      font-size: 1rem;
+    .verdict-title {
+      font-size: 0.92rem;
       font-weight: 600;
-      color: #f0f6fc;
+      color: var(--text-1);
     }
 
     .result-body {
-      background: #161b22;
-      padding: 1rem 1.25rem;
+      padding: 0.9rem 1.25rem;
     }
     .result-row {
       display: flex;
-      gap: 0.5rem;
-      font-size: 0.875rem;
+      gap: 1rem;
+      font-size: 0.845rem;
       margin-bottom: 0.5rem;
       line-height: 1.5;
     }
     .result-row:last-child { margin-bottom: 0; }
-    .result-label {
-      color: #8b949e;
-      min-width: 80px;
+    .row-key {
+      color: var(--text-3);
+      min-width: 72px;
       flex-shrink: 0;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding-top: 0.1rem;
     }
-    .result-value { color: #e6edf3; }
-    .risk-critical { color: #f85149; font-weight: 600; }
-    .risk-elevated { color: #d29922; font-weight: 600; }
-    .risk-low      { color: #3fb950; font-weight: 600; }
+    .row-val { color: var(--text-2); }
+    .risk-critical { color: var(--block-label);  font-weight: 600; }
+    .risk-elevated { color: var(--review-label); font-weight: 600; }
+    .risk-low      { color: var(--allow-label);  font-weight: 600; }
 
-    /* Footer */
+    /* ── How it works ── */
+    .how {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .how-title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-3);
+      margin-bottom: 0.65rem;
+    }
+    .how-flow {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: var(--text-2);
+    }
+    .how-step {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.3rem 0.65rem;
+      color: var(--text-1);
+      font-size: 0.8rem;
+    }
+    .how-arrow { color: var(--text-3); font-size: 0.75rem; }
+    .how-note {
+      margin-top: 0.7rem;
+      font-size: 0.76rem;
+      color: var(--text-3);
+    }
+
+    /* ── Footer ── */
     .footer {
       text-align: center;
-      font-size: 0.8rem;
-      color: #8b949e;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #21262d;
+      font-size: 0.76rem;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
     }
-    .footer a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
-    .footer a:hover { text-decoration: underline; }
-    .footer p + p { margin-top: 0.4rem; }
   </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="header">
-      <h1>GENESIS AI Code Safety Gate</h1>
-      <p>Try a public-safe demo — see ALLOW, REQUIRE_APPROVAL, and BLOCK decisions<br>
-         for AI-generated code changes before execution.</p>
-    </div>
+  <!-- Header -->
+  <header class="header">
+    <p class="eyebrow">GENESIS</p>
+    <h1>AI Code Safety Gate</h1>
+    <p class="slogan">Stop risky AI code before it runs.</p>
+    <p class="sub">
+      A public-safe demo showing how AI-generated changes can be allowed,
+      reviewed, or blocked before execution.
+    </p>
+    <p class="trust-line">Control before execution. Confidence before damage.</p>
+  </header>
 
-    <div class="warning">
-      ⚠ This is a public-safe demo shell. The private GENESIS core is not included.
-    </div>
-
-    <!-- Result panel (shown after analysis) -->
-    <div class="result" id="result">
-      <div class="result-header" id="result-header">
-        <span class="badge" id="result-badge"></span>
-        <span class="decision-label" id="result-decision-label"></span>
-      </div>
-      <div class="result-body">
-        <div class="result-row">
-          <span class="result-label">Risk level</span>
-          <span class="result-value" id="result-risk"></span>
-        </div>
-        <div class="result-row">
-          <span class="result-label">Reason</span>
-          <span class="result-value" id="result-reason"></span>
-        </div>
-        <div class="result-row">
-          <span class="result-label">Action</span>
-          <span class="result-value" id="result-action"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Input card -->
-    <div class="card">
-      <h2>Try a scenario</h2>
-      <div class="presets">
-        <button class="preset-btn safe" onclick="loadPreset('safe')">Try Safe Change</button>
-        <button class="preset-btn warn" onclick="loadPreset('deadcode')">Try Dead-Code Gate</button>
-        <button class="preset-btn danger" onclick="loadPreset('danger')">Try Dangerous Export Nullification</button>
-      </div>
-      <textarea id="input" placeholder="Paste or type a code change to analyze..."></textarea>
-      <button class="analyze-btn" onclick="analyze()">Analyze Change</button>
-    </div>
-
-    <div class="footer">
-      <p>
-        <a href="https://github.com/yaron180986-create/genesis-ai-code-safety-demo" target="_blank" rel="noopener">
-          github.com/yaron180986-create/genesis-ai-code-safety-demo
-        </a>
-      </p>
-      <p>Public demo only. Private GENESIS core excluded.</p>
-    </div>
-
+  <!-- Warning -->
+  <div class="notice">
+    This is a public-safe demo shell. The private GENESIS core is not included.
   </div>
 
-  <script>
-    const PRESETS = {
-      safe: "// Safe helper addition\nfunction formatDate(date) {\n  return date.toISOString().split('T')[0];\n}",
-      deadcode: "// Dead-code gate on critical payment flow\nif (false) {\n  processPayment(order);\n}",
-      danger: "// Critical export nullification\nmodule.exports = null;"
+  <!-- Scenario selector -->
+  <div class="scenarios">
+    <button class="scenario-pill" id="pill-safe"     onclick="loadPreset('safe')">
+      Safe Change
+      <span class="pill-label">helper function added</span>
+    </button>
+    <button class="scenario-pill" id="pill-deadcode" onclick="loadPreset('deadcode')">
+      Dead-Code Gate
+      <span class="pill-label">if(false) disables flow</span>
+    </button>
+    <button class="scenario-pill" id="pill-danger"   onclick="loadPreset('danger')">
+      Export Nullification
+      <span class="pill-label">module.exports = null</span>
+    </button>
+  </div>
+
+  <!-- Input -->
+  <div class="input-card">
+    <textarea id="input" placeholder="Paste or type a code change to analyze..."></textarea>
+    <button class="cta-btn" onclick="analyze()">Run Safety Check</button>
+    <p class="cta-note">The demo evaluates visible public-safe patterns only.</p>
+  </div>
+
+  <!-- Business boundary -->
+  <div class="boundary">
+    <strong>First simulated fix is free.</strong>
+    Additional fixes require a paid pilot or setup.
+  </div>
+
+  <!-- Result -->
+  <div class="result" id="result">
+    <div class="result-top" id="result-top">
+      <span class="verdict-badge" id="result-badge"></span>
+      <span class="verdict-title" id="result-title"></span>
+    </div>
+    <div class="result-body">
+      <div class="result-row">
+        <span class="row-key">Risk</span>
+        <span class="row-val" id="result-risk"></span>
+      </div>
+      <div class="result-row">
+        <span class="row-key">Reason</span>
+        <span class="row-val" id="result-reason"></span>
+      </div>
+      <div class="result-row">
+        <span class="row-key">Action</span>
+        <span class="row-val" id="result-action"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="how">
+    <p class="how-title">How this demo works</p>
+    <div class="how-flow">
+      <span class="how-step">AI-generated change</span>
+      <span class="how-arrow">→</span>
+      <span class="how-step">safety check</span>
+      <span class="how-arrow">→</span>
+      <span class="how-step">ALLOW</span>
+      <span class="how-arrow">/</span>
+      <span class="how-step">REQUIRE_APPROVAL</span>
+      <span class="how-arrow">/</span>
+      <span class="how-step">BLOCK</span>
+    </div>
+    <p class="how-note">
+      This browser demo shows the concept only.
+      Production-grade evaluation requires the private GENESIS core.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">Public demo</footer>
+
+</div>
+<script>
+  const PRESETS = {
+    safe:     "// Safe helper addition\nfunction formatDate(date) {\n  return date.toISOString().split('T')[0];\n}",
+    deadcode: "// Dead-code gate on critical payment flow\nif (false) {\n  processPayment(order);\n}",
+    danger:   "// Critical export nullification\nmodule.exports = null;"
+  };
+
+  const pillIds = { safe: 'pill-safe', deadcode: 'pill-deadcode', danger: 'pill-danger' };
+
+  function loadPreset(key) {
+    document.getElementById('input').value = PRESETS[key];
+    Object.values(pillIds).forEach(id => document.getElementById(id).classList.remove('active'));
+    document.getElementById(pillIds[key]).classList.add('active');
+    analyze();
+  }
+
+  function analyze() {
+    const input = document.getElementById('input').value.trim();
+    if (!input) return;
+
+    let decision, riskClass, riskText, reason, action, stateClass;
+
+    if (/module\.exports\s*=\s*null/.test(input)) {
+      decision   = 'BLOCK';
+      stateClass = 'block';
+      riskClass  = 'risk-critical';
+      riskText   = 'CRITICAL';
+      reason     = 'Detected module.exports = null — critical export nullification.';
+      action     = 'Change blocked before execution.';
+    } else if (/if\s*\(\s*false\s*\)/.test(input)) {
+      decision   = 'REQUIRE_APPROVAL';
+      stateClass = 'review';
+      riskClass  = 'risk-elevated';
+      riskText   = 'ELEVATED';
+      reason     = 'Detected dead-code gate pattern — if(false) disables critical flow.';
+      action     = 'Change queued for human review.';
+    } else {
+      decision   = 'ALLOW';
+      stateClass = 'allow';
+      riskClass  = 'risk-low';
+      riskText   = 'LOW';
+      reason     = 'No high-risk public demo patterns detected.';
+      action     = 'Change cleared for execution.';
+    }
+
+    const TITLES = {
+      ALLOW:            'Change passed safety check',
+      BLOCK:            'Change blocked before execution',
+      REQUIRE_APPROVAL: 'Human sign-off required before execution'
     };
 
-    function loadPreset(key) {
-      document.getElementById('input').value = PRESETS[key];
-      analyze();
-    }
+    const top = document.getElementById('result-top');
+    top.className = 'result-top ' + stateClass;
 
-    function analyze() {
-      const input = document.getElementById('input').value.trim();
-      if (!input) return;
+    const badge = document.getElementById('result-badge');
+    badge.className = 'verdict-badge ' + stateClass;
+    badge.textContent = decision;
 
-      let decision, risk, reason, action, cls;
+    document.getElementById('result-title').textContent  = TITLES[decision];
 
-      if (/module\.exports\s*=\s*null/.test(input)) {
-        decision = 'BLOCK';
-        cls      = 'block';
-        risk     = 'CRITICAL';
-        reason   = 'Detected module.exports = null — critical export nullification.';
-        action   = 'Change blocked before execution.';
-      } else if (/if\s*\(\s*false\s*\)/.test(input)) {
-        decision = 'REQUIRE_APPROVAL';
-        cls      = 'review';
-        risk     = 'ELEVATED';
-        reason   = 'Detected dead-code gate pattern — if(false) disables critical flow.';
-        action   = 'Change queued for human review.';
-      } else {
-        decision = 'ALLOW';
-        cls      = 'allow';
-        risk     = 'LOW';
-        reason   = 'No high-risk public demo patterns detected.';
-        action   = 'Change cleared for execution.';
-      }
+    const riskEl = document.getElementById('result-risk');
+    riskEl.className = 'row-val ' + riskClass;
+    riskEl.textContent = riskText;
 
-      const riskClass = { CRITICAL: 'risk-critical', ELEVATED: 'risk-elevated', LOW: 'risk-low' }[risk];
+    document.getElementById('result-reason').textContent = reason;
+    document.getElementById('result-action').textContent = action;
 
-      const header = document.getElementById('result-header');
-      header.className = 'result-header ' + cls;
-
-      const badge = document.getElementById('result-badge');
-      badge.className = 'badge ' + cls;
-      badge.textContent = decision;
-
-      document.getElementById('result-decision-label').textContent =
-        { ALLOW: 'Change passed safety check', BLOCK: 'Change blocked before execution', REQUIRE_APPROVAL: 'Human sign-off required' }[decision];
-
-      const riskEl = document.getElementById('result-risk');
-      riskEl.className = 'result-value ' + riskClass;
-      riskEl.textContent = risk;
-
-      document.getElementById('result-reason').textContent = reason;
-      document.getElementById('result-action').textContent = action;
-
-      const resultEl = document.getElementById('result');
-      resultEl.classList.add('visible');
-      resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  </script>
+    const panel = document.getElementById('result');
+    panel.style.display = 'block';
+    // Force reflow for transition
+    panel.getBoundingClientRect();
+    panel.classList.add('visible');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
 </body>
 </html>
