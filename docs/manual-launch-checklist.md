@@ -63,6 +63,14 @@
 - Offer pilot only if they use AI coding tools and have real risk
 - Track candidates
 
+## Commercial Next Step
+
+If someone confirms real workflow pain, offer a paid pilot discussion.
+
+Do not offer checkout immediately.
+Do not send payment link before qualification.
+Do not count generic praise as a pilot signal.
+
 ## Daily Review
 
 At end of each day, answer:

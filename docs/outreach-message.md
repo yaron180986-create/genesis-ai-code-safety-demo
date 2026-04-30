@@ -50,3 +50,13 @@ Repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 - Engineering leads at AI-forward teams
 - Open source contributors who've hit AI breakage
 - Anyone who's complained publicly about AI-generated code quality
+
+---
+
+## Commercial Next Step
+
+If someone confirms real workflow pain, offer a paid pilot discussion.
+
+Do not offer checkout immediately.
+Do not send payment link before qualification.
+Do not count generic praise as a pilot signal.

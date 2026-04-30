@@ -58,3 +58,11 @@ Weak signal:
 ## Rule
 
 Do not build more features until first feedback is reviewed.
+
+## Commercial Next Step
+
+If someone confirms real workflow pain, offer a paid pilot discussion.
+
+Do not offer checkout immediately.
+Do not send payment link before qualification.
+Do not count generic praise as a pilot signal.
