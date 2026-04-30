@@ -170,4 +170,29 @@ If you work with AI-generated code at scale and want to talk:
 
 ---
 
+## Paid Pilot
+
+If your team is using AI coding tools and wants to test a pre-execution safety gate, request a paid pilot.
+
+Pilot discussions can cover:
+
+* AI coding workflow review
+* risk pattern mapping
+* ALLOW / REQUIRE_APPROVAL / BLOCK policy examples
+* GitHub / CI / local workflow integration plan
+
+Contact:
+
+[hello@aicodesafety.com](mailto:hello@aicodesafety.com)
+
+Temporary fallback:
+
+[yaron180986@gmail.com](mailto:yaron180986@gmail.com)
+
+Pilot details: [docs/paid-pilot.md](docs/paid-pilot.md)
+
+Payment readiness: [docs/payment-readiness.md](docs/payment-readiness.md)
+
+---
+
 > GENESIS core is private. This repo is a public demo only.
