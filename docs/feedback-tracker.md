@@ -140,4 +140,35 @@ Only count a reply as meaningful validation if it confirms workflow pain, integr
 
 ---
 
-*Last updated: 2026-04-30*
+## Slice 105 Lead Discovery Status Options
+
+Use these status values for lead discovery and first outreach targeting:
+
+- DISCOVERED
+- QUALIFIED
+- SHORTLISTED
+- CONTACT_READY
+- CONTACTED
+- GHOST
+- WEAK_SIGNAL
+- PAIN_CONFIRMED
+- INTEGRATION_INTEREST
+- DEMO_REQUEST
+- PILOT_CANDIDATE
+- NOT_RELEVANT
+
+Lead discovery rule:
+
+Do not contact leads automatically.
+
+Do not count generic AI interest as a qualified lead.
+
+Only mark CONTACT_READY when there is a clear public reason for outreach and a specific message angle.
+
+Manual outreach rule:
+
+The user must review and approve first-batch messages before sending.
+
+---
+
+*Last updated: 2026-05-01*
