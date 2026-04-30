@@ -119,4 +119,25 @@ Do not build more product features until at least one real pain signal is confir
 
 ---
 
+---
+
+## Slice 104 Response Status Options
+
+Use these status values for first outreach tracking:
+
+- GHOST
+- WEAK_SIGNAL
+- PAIN_CONFIRMED
+- INTEGRATION_INTEREST
+- DEMO_REQUEST
+- PILOT_CANDIDATE
+
+Validation rule:
+
+Do not count likes, stars, or generic praise as validation.
+
+Only count a reply as meaningful validation if it confirms workflow pain, integration interest, demo request, or pilot fit.
+
+---
+
 *Last updated: 2026-04-30*
