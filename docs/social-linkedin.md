@@ -21,9 +21,11 @@ GENESIS is an AI code safety gate. Before any AI-generated change reaches your e
 
 It doesn't replace your tests. It runs *before* your tests — at the point where AI agents are writing code into your system.
 
-The public demo is live on GitHub. You can run it locally in 60 seconds.
+The public demo is live. You can try it in your browser — no install required.
 
-→ [link to repo]
+→ Try the live demo: https://aicodesafety.com
+
+Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 If you're using AI agents to write or modify production code — I'd love your feedback.
 
@@ -42,7 +44,7 @@ It catches patterns that your linter won't:
 ✗ if(false) gates on critical paths
 ✗ Silent destructive rewrites
 
-The public demo is open source. Run it in 60 seconds:
+The public demo is live — try it in your browser in 10 seconds, or clone and run locally:
 
 ```
 git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo
@@ -50,7 +52,9 @@ cd genesis-ai-code-safety-demo
 npm install && npm run demo
 ```
 
-→ [link to repo]
+→ Try the live demo: https://aicodesafety.com
+
+Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 What patterns are you most worried about in AI-generated code? Drop a comment.
 
@@ -64,7 +68,9 @@ Probably not.
 
 GENESIS will.
 
-Public demo: [link to repo]
+Try the live demo: https://aicodesafety.com
+
+Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 ---
 

@@ -28,10 +28,12 @@ It pattern-matches for:
 → Unauthorized dependency overrides
 
 **Tweet 4:**
-Public demo is live. Run it in 60 seconds:
+Public demo is live — try it in your browser or clone locally:
+
+Browser: https://aicodesafety.com
 
 ```
-git clone [repo]
+git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 npm install && npm run demo
 ```
 
@@ -42,7 +44,9 @@ If you're using Cursor, Copilot, or any AI agent to write production code — th
 
 Open source. MIT. No telemetry.
 
-→ [repo link]
+→ https://aicodesafety.com
+
+Repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 What AI code patterns scare you most? Reply and I'll add them to the detection set.
 
@@ -57,7 +61,9 @@ Shipped to prod.
 
 GENESIS catches this before it reaches your pipeline.
 
-Public demo: [link]
+Try the live demo: https://aicodesafety.com
+
+Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 ---
 
@@ -70,7 +76,9 @@ Your CI had no idea.
 
 GENESIS would have flagged it.
 
-Demo: [link]
+Demo: https://aicodesafety.com
+
+Repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 ---
 
@@ -79,10 +87,12 @@ Built an open-source AI code safety gate.
 
 It intercepts AI-generated changes before your pipeline runs them.
 
-60-second demo:
+Live demo (no install): https://aicodesafety.com
+
+Or 60-second local run:
 npm install && npm run demo
 
-→ [link]
+→ https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 What should it catch next?
 

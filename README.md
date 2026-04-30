@@ -44,13 +44,11 @@ Every decision is explicit.
 
 ## Try the Browser Demo
 
-Open the static HTML demo directly — no install required:
+**Live demo (no install required):**
 
-```bash
-open index.html
-```
+https://aicodesafety.com
 
-Or double-click `index.html` in the repo folder.
+Or run locally — open `index.html` directly, or double-click in the repo folder.
 
 The browser demo includes:
 
@@ -65,6 +63,12 @@ The browser demo includes:
 ---
 
 ## Live Demo
+
+**Browser demo:** https://aicodesafety.com
+
+**Public repo:** https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+
+Or run the CLI demo locally:
 
 ```bash
 git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo.git
@@ -155,6 +159,10 @@ AI Tool Output
 ## Status
 
 Early MVP — actively seeking feedback from developers using AI coding tools.
+
+**Live demo:** https://aicodesafety.com
+
+**Public repo:** https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 If you work with AI-generated code at scale and want to talk:
 

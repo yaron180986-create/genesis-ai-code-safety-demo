@@ -16,10 +16,11 @@ I've been building a safety layer for AI-generated code — a pre-execution gate
 
 The short version: AI tools sometimes generate changes that look fine but silently break things. `module.exports = null` is the classic example. GENESIS catches those patterns before execution.
 
-I just put a public demo on GitHub:
-https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+I put a public demo live — you can try it in your browser right now, no install needed:
+https://aicodesafety.com
 
-You can clone it and run 3 scenarios in under 2 minutes.
+Or clone and run 3 scenarios in under 2 minutes:
+https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 I'm in early feedback mode — if you work with AI coding tools at any scale, I'd genuinely value 10 minutes of your time to hear what breakage patterns you've actually hit.
 
@@ -36,7 +37,10 @@ Hey [Name] — I shipped a public demo of something I've been building: a pre-ex
 It classifies changes as ALLOW / REQUIRE_APPROVAL / BLOCK before they reach execution.
 
 Would love your take if you've dealt with AI-generated code causing breakage in production:
-https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+
+Live demo: https://aicodesafety.com
+
+Repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 ---
 

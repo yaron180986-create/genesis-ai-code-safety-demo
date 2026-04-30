@@ -1,10 +1,16 @@
 # GENESIS — Manual Launch Checklist
 
+## Live Domain
+
+- Live demo: https://aicodesafety.com
+- Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+
 ## Before Posting
 
 - Public repo exists
 - README is polished
 - Demo commands work
+- Live domain confirmed working
 - GitHub topics added
 - Repo pinned on profile
 - Outreach tracker ready
@@ -16,6 +22,7 @@
 - Add topics
 - Enable Issues
 - Pin repo on profile
+- Add live demo link to About section: https://aicodesafety.com
 - Confirm private core is not visible publicly
 
 ## LinkedIn

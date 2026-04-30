@@ -49,6 +49,10 @@ It runs at the pipeline boundary — between "AI wrote this" and "this executes.
 
 **Public demo:**
 
+**Try the live demo (no install):** https://aicodesafety.com
+
+Or run locally:
+
 ```bash
 git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 cd genesis-ai-code-safety-demo
@@ -90,7 +94,9 @@ These came from my own failures with AI agents. But I suspect the real failure c
 
 What AI-generated code patterns have broken things for you? Not hypothetical — actual incidents.
 
-If useful: I have a public demo repo here: [link]
+If useful: live demo here: https://aicodesafety.com
+
+Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
 
 ---
 
