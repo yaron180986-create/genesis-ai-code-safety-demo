@@ -6,7 +6,7 @@ https://aicodesafety.com
 
 ## Public Repo
 
-https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 ## Vercel Project
 

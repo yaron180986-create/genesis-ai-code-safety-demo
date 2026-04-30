@@ -48,6 +48,6 @@ Tell me what dangerous patterns you've seen AI generate.
 
 ## Notes
 
-- Replace `[link to repo]` with: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+- Replace `[link to repo]` with: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 - Post when you have at least the README + demo running
 - End with a question to drive comments

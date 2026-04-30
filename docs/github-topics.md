@@ -33,7 +33,7 @@ code-gate
 
 ## How to Add
 
-1. Go to: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+1. Go to: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 2. Click the gear icon next to "About" on the right sidebar
 3. Paste topics one by one
 4. Save changes

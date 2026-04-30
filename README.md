@@ -66,12 +66,12 @@ The browser demo includes:
 
 **Browser demo:** https://aicodesafety.com
 
-**Public repo:** https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+**Public repo:** https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 Or run the CLI demo locally:
 
 ```bash
-git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo.git
+git clone https://github.com/aicodesafety/genesis-ai-code-safety-demo.git
 cd genesis-ai-code-safety-demo
 npm install
 ```
@@ -162,7 +162,7 @@ Early MVP — actively seeking feedback from developers using AI coding tools.
 
 **Live demo:** https://aicodesafety.com
 
-**Public repo:** https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+**Public repo:** https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 If you work with AI-generated code at scale and want to talk:
 

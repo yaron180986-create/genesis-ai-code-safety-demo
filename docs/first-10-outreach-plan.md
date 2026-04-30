@@ -49,7 +49,7 @@ Example risk:
 module.exports = null;
 
 Would love your feedback:
-https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 Question:
 Have you ever had AI-generated code break something unexpectedly?

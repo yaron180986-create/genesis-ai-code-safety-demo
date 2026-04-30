@@ -25,7 +25,7 @@ The public demo is live. You can try it in your browser — no install required.
 
 → Try the live demo: https://aicodesafety.com
 
-Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Public repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 If you're using AI agents to write or modify production code — I'd love your feedback.
 
@@ -47,14 +47,14 @@ It catches patterns that your linter won't:
 The public demo is live — try it in your browser in 10 seconds, or clone and run locally:
 
 ```
-git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+git clone https://github.com/aicodesafety/genesis-ai-code-safety-demo
 cd genesis-ai-code-safety-demo
 npm install && npm run demo
 ```
 
 → Try the live demo: https://aicodesafety.com
 
-Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Public repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 What patterns are you most worried about in AI-generated code? Drop a comment.
 
@@ -70,7 +70,7 @@ GENESIS will.
 
 Try the live demo: https://aicodesafety.com
 
-Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Public repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 ---
 

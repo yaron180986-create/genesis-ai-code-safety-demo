@@ -54,7 +54,7 @@ It runs at the pipeline boundary — between "AI wrote this" and "this executes.
 Or run locally:
 
 ```bash
-git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+git clone https://github.com/aicodesafety/genesis-ai-code-safety-demo
 cd genesis-ai-code-safety-demo
 npm install
 npm run demo          # critical block
@@ -96,7 +96,7 @@ What AI-generated code patterns have broken things for you? Not hypothetical —
 
 If useful: live demo here: https://aicodesafety.com
 
-Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Public repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 ---
 

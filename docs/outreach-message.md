@@ -20,7 +20,7 @@ I put a public demo live — you can try it in your browser right now, no instal
 https://aicodesafety.com
 
 Or clone and run 3 scenarios in under 2 minutes:
-https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 I'm in early feedback mode — if you work with AI coding tools at any scale, I'd genuinely value 10 minutes of your time to hear what breakage patterns you've actually hit.
 
@@ -40,7 +40,7 @@ Would love your take if you've dealt with AI-generated code causing breakage in 
 
 Live demo: https://aicodesafety.com
 
-Repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 ---
 

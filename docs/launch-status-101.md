@@ -6,7 +6,7 @@ Live demo:
 https://aicodesafety.com
 
 Public repo:
-https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 ## Launch Readiness
 

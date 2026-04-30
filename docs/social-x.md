@@ -33,7 +33,7 @@ Public demo is live — try it in your browser or clone locally:
 Browser: https://aicodesafety.com
 
 ```
-git clone https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+git clone https://github.com/aicodesafety/genesis-ai-code-safety-demo
 npm install && npm run demo
 ```
 
@@ -46,7 +46,7 @@ Open source. MIT. No telemetry.
 
 → https://aicodesafety.com
 
-Repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 What AI code patterns scare you most? Reply and I'll add them to the detection set.
 
@@ -63,7 +63,7 @@ GENESIS catches this before it reaches your pipeline.
 
 Try the live demo: https://aicodesafety.com
 
-Public repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Public repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 ---
 
@@ -78,7 +78,7 @@ GENESIS would have flagged it.
 
 Demo: https://aicodesafety.com
 
-Repo: https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+Repo: https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 ---
 
@@ -92,7 +92,7 @@ Live demo (no install): https://aicodesafety.com
 Or 60-second local run:
 npm install && npm run demo
 
-→ https://github.com/yaron180986-create/genesis-ai-code-safety-demo
+→ https://github.com/aicodesafety/genesis-ai-code-safety-demo
 
 What should it catch next?
 
