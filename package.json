@@ -1,0 +1,22 @@
+{
+  "name": "genesis-ai-code-safety-demo",
+  "version": "0.1.0",
+  "description": "Public-safe demo for GENESIS AI Code Safety Gate.",
+  "main": "scripts/genesis-demo.js",
+  "scripts": {
+    "demo": "node scripts/genesis-demo.js examples/demo-danger.json",
+    "demo:safe": "node scripts/genesis-demo.js examples/demo-safe.json",
+    "demo:danger": "node scripts/genesis-demo.js examples/demo-danger.json",
+    "demo:dead-code": "node scripts/genesis-demo.js examples/demo-dead-code.json"
+  },
+  "keywords": [
+    "ai",
+    "code-safety",
+    "developer-tools",
+    "ai-coding",
+    "cli",
+    "demo"
+  ],
+  "license": "UNLICENSED",
+  "private": false
+}

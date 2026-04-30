@@ -1,0 +1,5 @@
+{
+  "label": "Dead-code gate in critical flow",
+  "description": "AI-generated change that wraps a critical execution path in if(false), silently disabling it without removing the code.",
+  "content": "if (false) { runPaymentProcessor(); validateAuthToken(); commitTransaction(); }"
+}

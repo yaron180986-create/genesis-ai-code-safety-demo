@@ -1,0 +1,5 @@
+{
+  "label": "Safe helper addition",
+  "description": "A safe utility function added to the codebase. No destructive patterns detected.",
+  "content": "function formatDate(ts) { return new Date(ts).toISOString(); } module.exports = { formatDate };"
+}

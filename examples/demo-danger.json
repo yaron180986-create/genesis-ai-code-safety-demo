@@ -1,0 +1,5 @@
+{
+  "label": "Critical export nullification",
+  "description": "AI-generated change that nullifies the module export, destroying the entire module interface at runtime.",
+  "content": "module.exports = null;"
+}
