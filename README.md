@@ -42,6 +42,27 @@ Every decision is explicit.
 
 ---
 
+## Try the Browser Demo
+
+Open the static HTML demo directly — no install required:
+
+```bash
+open index.html
+```
+
+Or double-click `index.html` in the repo folder.
+
+The browser demo includes:
+
+- Safe helper change → ALLOW
+- Dead-code gate → REQUIRE_APPROVAL
+- Export nullification → BLOCK
+- Custom input textarea
+
+> Note: This is a public-safe browser demo. The private GENESIS core is not included.
+
+---
+
 ## Live Demo
 
 ```bash

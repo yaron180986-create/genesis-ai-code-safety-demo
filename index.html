@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GENESIS AI Code Safety Gate — Public Demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #f0f6fc;
+      margin-bottom: 0.5rem;
+    }
+    .header p {
+      color: #8b949e;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Warning banner */
+    .warning {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-left: 3px solid #f0883e;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: #f0883e;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Card */
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f0f6fc;
+      margin-bottom: 1rem;
+    }
+
+    /* Preset buttons */
+    .presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0;
+    }
+    .preset-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      background: #21262d;
+      color: #e6edf3;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .preset-btn:hover { background: #30363d; border-color: #8b949e; }
+    .preset-btn.safe   { border-color: #238636; color: #3fb950; }
+    .preset-btn.safe:hover   { background: #0d2114; border-color: #3fb950; }
+    .preset-btn.danger { border-color: #da3633; color: #f85149; }
+    .preset-btn.danger:hover { background: #2d1317; border-color: #f85149; }
+    .preset-btn.warn   { border-color: #9e6a03; color: #d29922; }
+    .preset-btn.warn:hover   { background: #272115; border-color: #d29922; }
+
+    /* Textarea */
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #e6edf3;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.875rem;
+      padding: 0.75rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.15s;
+      margin-top: 1rem;
+    }
+    textarea:focus { border-color: #58a6ff; }
+
+    /* Analyze button */
+    .analyze-btn {
+      display: block;
+      width: 100%;
+      margin-top: 0.75rem;
+      padding: 0.65rem 1rem;
+      border-radius: 6px;
+      border: none;
+      background: #238636;
+      color: #f0f6fc;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .analyze-btn:hover { background: #2ea043; }
+
+    /* Result panel */
+    .result {
+      display: none;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .result.visible { display: block; }
+
+    .result-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+    }
+    .result-header.allow  { background: #0d2114; border-bottom: 1px solid #238636; }
+    .result-header.block  { background: #2d1317; border-bottom: 1px solid #da3633; }
+    .result-header.review { background: #272115; border-bottom: 1px solid #9e6a03; }
+
+    .badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+    .badge.allow  { background: #238636; color: #f0f6fc; }
+    .badge.block  { background: #da3633; color: #f0f6fc; }
+    .badge.review { background: #9e6a03; color: #f0f6fc; }
+
+    .result-header .decision-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f0f6fc;
+    }
+
+    .result-body {
+      background: #161b22;
+      padding: 1rem 1.25rem;
+    }
+    .result-row {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    .result-row:last-child { margin-bottom: 0; }
+    .result-label {
+      color: #8b949e;
+      min-width: 80px;
+      flex-shrink: 0;
+    }
+    .result-value { color: #e6edf3; }
+    .risk-critical { color: #f85149; font-weight: 600; }
+    .risk-elevated { color: #d29922; font-weight: 600; }
+    .risk-low      { color: #3fb950; font-weight: 600; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #21262d;
+    }
+    .footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    .footer a:hover { text-decoration: underline; }
+    .footer p + p { margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1>GENESIS AI Code Safety Gate</h1>
+      <p>Try a public-safe demo — see ALLOW, REQUIRE_APPROVAL, and BLOCK decisions<br>
+         for AI-generated code changes before execution.</p>
+    </div>
+
+    <div class="warning">
+      ⚠ This is a public-safe demo shell. The private GENESIS core is not included.
+    </div>
+
+    <!-- Result panel (shown after analysis) -->
+    <div class="result" id="result">
+      <div class="result-header" id="result-header">
+        <span class="badge" id="result-badge"></span>
+        <span class="decision-label" id="result-decision-label"></span>
+      </div>
+      <div class="result-body">
+        <div class="result-row">
+          <span class="result-label">Risk level</span>
+          <span class="result-value" id="result-risk"></span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Reason</span>
+          <span class="result-value" id="result-reason"></span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Action</span>
+          <span class="result-value" id="result-action"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input card -->
+    <div class="card">
+      <h2>Try a scenario</h2>
+      <div class="presets">
+        <button class="preset-btn safe" onclick="loadPreset('safe')">Try Safe Change</button>
+        <button class="preset-btn warn" onclick="loadPreset('deadcode')">Try Dead-Code Gate</button>
+        <button class="preset-btn danger" onclick="loadPreset('danger')">Try Dangerous Export Nullification</button>
+      </div>
+      <textarea id="input" placeholder="Paste or type a code change to analyze..."></textarea>
+      <button class="analyze-btn" onclick="analyze()">Analyze Change</button>
+    </div>
+
+    <div class="footer">
+      <p>
+        <a href="https://github.com/yaron180986-create/genesis-ai-code-safety-demo" target="_blank" rel="noopener">
+          github.com/yaron180986-create/genesis-ai-code-safety-demo
+        </a>
+      </p>
+      <p>Public demo only. Private GENESIS core excluded.</p>
+    </div>
+
+  </div>
+
+  <script>
+    const PRESETS = {
+      safe: "// Safe helper addition\nfunction formatDate(date) {\n  return date.toISOString().split('T')[0];\n}",
+      deadcode: "// Dead-code gate on critical payment flow\nif (false) {\n  processPayment(order);\n}",
+      danger: "// Critical export nullification\nmodule.exports = null;"
+    };
+
+    function loadPreset(key) {
+      document.getElementById('input').value = PRESETS[key];
+      analyze();
+    }
+
+    function analyze() {
+      const input = document.getElementById('input').value.trim();
+      if (!input) return;
+
+      let decision, risk, reason, action, cls;
+
+      if (/module\.exports\s*=\s*null/.test(input)) {
+        decision = 'BLOCK';
+        cls      = 'block';
+        risk     = 'CRITICAL';
+        reason   = 'Detected module.exports = null — critical export nullification.';
+        action   = 'Change blocked before execution.';
+      } else if (/if\s*\(\s*false\s*\)/.test(input)) {
+        decision = 'REQUIRE_APPROVAL';
+        cls      = 'review';
+        risk     = 'ELEVATED';
+        reason   = 'Detected dead-code gate pattern — if(false) disables critical flow.';
+        action   = 'Change queued for human review.';
+      } else {
+        decision = 'ALLOW';
+        cls      = 'allow';
+        risk     = 'LOW';
+        reason   = 'No high-risk public demo patterns detected.';
+        action   = 'Change cleared for execution.';
+      }
+
+      const riskClass = { CRITICAL: 'risk-critical', ELEVATED: 'risk-elevated', LOW: 'risk-low' }[risk];
+
+      const header = document.getElementById('result-header');
+      header.className = 'result-header ' + cls;
+
+      const badge = document.getElementById('result-badge');
+      badge.className = 'badge ' + cls;
+      badge.textContent = decision;
+
+      document.getElementById('result-decision-label').textContent =
+        { ALLOW: 'Change passed safety check', BLOCK: 'Change blocked before execution', REQUIRE_APPROVAL: 'Human sign-off required' }[decision];
+
+      const riskEl = document.getElementById('result-risk');
+      riskEl.className = 'result-value ' + riskClass;
+      riskEl.textContent = risk;
+
+      document.getElementById('result-reason').textContent = reason;
+      document.getElementById('result-action').textContent = action;
+
+      const resultEl = document.getElementById('result');
+      resultEl.classList.add('visible');
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>
