@@ -166,7 +166,7 @@ Early MVP — actively seeking feedback from developers using AI coding tools.
 
 If you work with AI-generated code at scale and want to talk:
 
-**Contact:** yaron180986@gmail.com
+**Contact:** [hello@aicodesafety.com](mailto:hello@aicodesafety.com)
 
 ---
 

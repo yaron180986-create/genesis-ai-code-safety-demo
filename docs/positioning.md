@@ -63,4 +63,6 @@ Senior engineers and engineering leads at teams that use AI coding tools heavily
 
 Early MVP. Feedback welcome.
 
-Contact: yaron180986@gmail.com
+Contact: [hello@aicodesafety.com](mailto:hello@aicodesafety.com)
+
+Temporary fallback: [yaron180986@gmail.com](mailto:yaron180986@gmail.com)

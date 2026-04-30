@@ -91,7 +91,7 @@ When approved, add:
 
 ## Contact
 
-Preferred future contact:
+Contact:
 
 [hello@aicodesafety.com](mailto:hello@aicodesafety.com)
 

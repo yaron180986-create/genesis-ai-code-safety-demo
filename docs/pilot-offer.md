@@ -56,7 +56,9 @@ Teams or solo developers who:
 
 ## TO APPLY
 
-Send a message to: yaron180986@gmail.com
+Send a message to: [hello@aicodesafety.com](mailto:hello@aicodesafety.com)
+
+Temporary fallback: [yaron180986@gmail.com](mailto:yaron180986@gmail.com)
 
 Subject: GENESIS Pilot
 
