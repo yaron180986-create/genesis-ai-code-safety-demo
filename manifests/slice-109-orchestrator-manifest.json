@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "slice": {
+    "number": 109,
+    "name": "Runtime State Tracker / Orchestrator Manifest",
+    "branch": "slice-109-runtime-state-tracker"
+  },
+  "repository": {
+    "remote": "https://github.com/aicodesafety/genesis-ai-code-safety-demo.git",
+    "forbiddenFiles": [
+      "index.html",
+      "package-lock.json",
+      "examples/",
+      "src/",
+      "public/",
+      ".env",
+      ".env.local"
+    ]
+  },
+  "requiredFiles": [
+    "docs/orchestrator-manifest-schema-109.md",
+    "docs/runtime-state-tracker-109.md",
+    "manifests/slice-109-orchestrator-manifest.json",
+    "scripts/slice-state-tracker.js",
+    "package.json"
+  ],
+  "allowedChanges": [
+    "docs/orchestrator-manifest-schema-109.md",
+    "docs/runtime-state-tracker-109.md",
+    "manifests/slice-109-orchestrator-manifest.json",
+    "scripts/slice-state-tracker.js",
+    "package.json"
+  ],
+  "markers": {
+    "docs/orchestrator-manifest-schema-109.md": "A slice without a manifest is not fully orchestratable.",
+    "docs/runtime-state-tracker-109.md": "The tracker is read-only.",
+    "scripts/slice-state-tracker.js": "GENESIS SLICE STATE TRACKER",
+    "package.json": "slice:state"
+  },
+  "validationCommands": [
+    "npm run slice:state",
+    "npm run slice:state:109",
+    "npm run demo:safe",
+    "npm run demo:danger",
+    "npm run demo:dead-code"
+  ],
+  "git": {
+    "commitMessage": "tools(genesis): add runtime state tracker 109",
+    "mergeMessage": "merge(genesis): merge runtime state tracker 109"
+  }
+}

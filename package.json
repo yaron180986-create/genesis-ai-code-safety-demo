@@ -7,7 +7,9 @@
     "demo": "node scripts/genesis-demo.js examples/demo-danger.json",
     "demo:safe": "node scripts/genesis-demo.js examples/demo-safe.json",
     "demo:danger": "node scripts/genesis-demo.js examples/demo-danger.json",
-    "demo:dead-code": "node scripts/genesis-demo.js examples/demo-dead-code.json"
+    "demo:dead-code": "node scripts/genesis-demo.js examples/demo-dead-code.json",
+    "slice:state": "node scripts/slice-state-tracker.js",
+    "slice:state:109": "node scripts/slice-state-tracker.js manifests/slice-109-orchestrator-manifest.json"
   },
   "keywords": [
     "ai",
