@@ -4,6 +4,16 @@
 
 F3 adds the first Brand Identity MVP layer to the PROVE BY GENESIS public demo. The page previously had no mark, no favicon, and no visual identity. This slice establishes a minimal, serious first brand layer without changing demo logic, scanner logic, or security behavior.
 
+### F3.1 — Mark Refinement
+
+After the initial mark (closed rectangle + left-side gate line), the geometry was refined so the mark simultaneously reads as an execution gate and subtly reads as the letter G for GENESIS.
+
+**Change:** The outer perimeter is now an open-right path (¾ of a rounded square) with the gate passage on the right side. The horizontal spur enters from the right at mid-opening. This creates:
+- Primary: controlled passage gate (the opening + threshold)
+- Secondary: capital G (open-right shape + inward crossbar)
+
+Files updated in F3.1: `prove-by-genesis-mark.svg`, `favicon.svg`, `prove-by-genesis-lockup.svg`, `docs/brand/brand-identity-mvp.md`.
+
 ## File Map
 
 ### New files

@@ -14,24 +14,27 @@ It should not communicate:
 - Sci-fi aesthetics
 - Marketing hype
 
-## Chosen Concept: The Gate
+## Chosen Concept: The Gate / Subtle G
 
-**The mark is a controlled passage symbol.**
+**The mark is a controlled passage symbol with a secondary Genesis G reading.**
 
 Two elements:
-1. A rectangle with rounded corners — the controlled boundary (the perimeter of execution control)
-2. A horizontal line at ~65% height, extending ~70% of the interior width — the gate control threshold
+1. An open-right rounded square path — the controlled boundary with a deliberate passage opening on the right side (~30% of height, mid-right)
+2. A horizontal spur entering from the right at mid-opening — the gate control threshold / the G crossbar
 
-The gap between the line's right end and the rectangle's right wall is the controlled passage — the point where a decision has been made and movement is permitted. The mark is intentionally unresolved on the right: passage is not automatic, it is controlled.
+Primary reading (70%): execution gate. The outer path traces ¾ of a rounded square — a perimeter with a controlled opening on the right. The horizontal spur enters from that opening, representing the pre-execution threshold.
 
-This reads as: boundary / threshold / decision / controlled opening.
+Secondary reading (30%): the letter G for GENESIS. The open-right perimeter plus the inward spur together form the unmistakable geometry of a capital G. This is not a lettermark — the gate reading comes first. The G emerges on second look.
+
+This reads as: boundary / controlled passage / decision threshold / Genesis.
 
 ## Visual Meaning
 
-- **The outer rectangle**: The governance perimeter. Nothing enters or exits without passing through.
-- **The horizontal line**: The pre-execution threshold — the moment of the safety gate decision.
-- **The gap**: The controlled passage — what remains open after a decision is made.
-- **The blank upper-right interior**: What is blocked. The space that does not have permission.
+- **The outer open-right path**: The governance perimeter. Three sides are closed; the right side opens at the controlled passage point.
+- **The gap in the right side**: The controlled passage — the outcome of a gate decision. Passage is not automatic; it is decided.
+- **The horizontal spur**: The pre-execution threshold entering from the passage. Also the crossbar of the G.
+- **The enclosed left and lower area**: The interior of the execution-control boundary — what stays within governance.
+- **Negative G reading**: The open perimeter + spur together quietly spell the initial of GENESIS without shouting it.
 
 ## Color Logic
 
@@ -64,7 +67,7 @@ The lockup in the page header uses the mark SVG (`<img>`) combined with styled H
 Always use `#4a7fe0` for the mark on dark backgrounds. On light backgrounds, the same color remains legible. Do not alter the mark color to match arbitrary brand colors without producing a new asset.
 
 **Minimum size:**
-The mark is legible at 16×16. The lockup should not be displayed below 120px wide.
+The mark is legible at 16×16. The G spur and perimeter gap remain distinguishable at small sizes because the stroke-to-opening ratio is tuned for it. The lockup should not be displayed below 120px wide.
 
 ## What This Does NOT Claim
 
