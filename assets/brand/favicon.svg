@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Gate-G perimeter, 32x32 optimised for small-size legibility -->
+  <path d="M 30,13 L 30,6 Q 30,2 26,2 L 6,2 Q 2,2 2,6 L 2,26 Q 2,30 6,30 L 26,30 Q 30,30 30,26 L 30,22"
+        stroke="#4a7fe0" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- G spur at mid-opening -->
+  <line x1="30" y1="17.5" x2="19" y2="17.5"
+        stroke="#4a7fe0" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
