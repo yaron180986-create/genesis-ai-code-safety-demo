@@ -72,8 +72,16 @@
       font-weight: 700;
       color: #eef2fc;
       letter-spacing: -0.02em;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.5rem;
       line-height: 1.2;
+    }
+
+    .header .category-statement {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.85rem;
     }
 
     .header .slogan {
@@ -86,8 +94,9 @@
     .header .sub {
       font-size: 0.875rem;
       color: var(--text-2);
-      max-width: 480px;
+      max-width: 520px;
       margin: 0 auto 0.9rem;
+      line-height: 1.65;
     }
 
     .header .trust-line {
@@ -107,6 +116,49 @@
       color: var(--text-2);
       text-align: center;
       margin-bottom: 2.25rem;
+    }
+
+    /* ── Without / With comparison ── */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 480px) {
+      .comparison { grid-template-columns: 1fr; }
+    }
+    .comparison-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+    }
+    .comparison-card.without { border-left: 2px solid var(--block-label); }
+    .comparison-card.with    { border-left: 2px solid var(--allow-label); }
+    .comparison-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+    .comparison-card.without .comparison-label { color: var(--block-label); }
+    .comparison-card.with    .comparison-label { color: var(--allow-label); }
+    .comparison-body {
+      font-size: 0.83rem;
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+
+    /* ── Demo framing label ── */
+    .demo-framing {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 0.75rem;
     }
 
     /* ── Scenario selector ── */
@@ -205,18 +257,26 @@
       color: var(--text-3);
     }
 
-    /* ── Business boundary ── */
-    .boundary {
+    /* ── Honest demo boundary ── */
+    .boundary-honest {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 7px;
-      padding: 0.65rem 1rem;
-      font-size: 0.78rem;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.79rem;
       color: var(--text-3);
-      text-align: center;
       margin-bottom: 1.75rem;
+      line-height: 1.6;
     }
-    .boundary strong { color: var(--text-2); font-weight: 500; }
+    .boundary-honest strong {
+      display: block;
+      color: var(--text-2);
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      font-size: 0.82rem;
+    }
+    .boundary-honest p { margin-bottom: 0.3rem; }
+    .boundary-honest p:last-child { margin-bottom: 0; }
 
     /* ── Result panel ── */
     .result {
@@ -293,13 +353,13 @@
     .risk-elevated { color: var(--review-label); font-weight: 600; }
     .risk-low      { color: var(--allow-label);  font-weight: 600; }
 
-    /* ── How it works ── */
+    /* ── How it works / Decision model ── */
     .how {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 1.1rem 1.25rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.75rem;
     }
     .how-title {
       font-size: 0.7rem;
@@ -315,6 +375,7 @@
       flex-wrap: wrap;
       font-size: 0.82rem;
       color: var(--text-2);
+      margin-bottom: 1rem;
     }
     .how-step {
       background: var(--surface-2);
@@ -329,6 +390,132 @@
       margin-top: 0.7rem;
       font-size: 0.76rem;
       color: var(--text-3);
+    }
+
+    /* ── Decision model cards ── */
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    @media (max-width: 480px) {
+      .decision-grid { grid-template-columns: 1fr; }
+    }
+    .decision-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 0.75rem 0.85rem;
+    }
+    .decision-card-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .decision-card-label.allow  { color: var(--allow-label); }
+    .decision-card-label.review { color: var(--review-label); }
+    .decision-card-label.block  { color: var(--block-label); }
+    .decision-card-text {
+      font-size: 0.775rem;
+      color: var(--text-2);
+      line-height: 1.45;
+    }
+
+    /* ── Section shared styles ── */
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #eef2fc;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.55rem;
+    }
+    .section-body {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* ── Private core section ── */
+    .private-core {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .pipeline-visual {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 0.85rem 1rem;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.79rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      line-height: 2;
+    }
+    .core-points {
+      list-style: none;
+      margin: 0;
+    }
+    .core-points li {
+      font-size: 0.845rem;
+      color: var(--text-2);
+      padding: 0.3rem 0 0.3rem 1.1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .core-points li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--text-3);
+      font-size: 0.75rem;
+      top: 0.35rem;
+    }
+
+    /* ── Why this matters section ── */
+    .matters {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .matters-list {
+      list-style: none;
+      margin: 0 0 0.85rem 0;
+    }
+    .matters-list li {
+      font-size: 0.845rem;
+      color: var(--text-2);
+      padding: 0.5rem 0 0.5rem 1.1rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .matters-list li:last-child { border-bottom: none; }
+    .matters-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-3);
+    }
+    .matters-close {
+      font-size: 0.845rem;
+      color: var(--text-2);
+      line-height: 1.55;
     }
 
     /* ── Feedback CTA ── */
@@ -364,20 +551,43 @@
 
   <!-- Header -->
   <header class="header">
-    <p class="eyebrow">GENESIS</p>
+    <p class="eyebrow">PROVE BY GENESIS</p>
     <h1>AI Code Safety Gate</h1>
-    <p class="slogan">Stop risky AI code before it runs.</p>
+    <p class="category-statement">The execution gate for AI-generated code.</p>
+    <p class="slogan">AI coding tools are executing. This is the gate.</p>
     <p class="sub">
-      A public-safe demo showing how AI-generated changes can be allowed,
-      reviewed, or blocked before execution.
+      PROVE BY GENESIS is a pre-execution control layer for AI-generated code.
+      Before AI-generated code runs, the gate returns a decision:
+      ALLOW, REQUIRE_APPROVAL, or BLOCK — with evidence.
     </p>
-    <p class="trust-line">Control before execution. Confidence before damage.</p>
+    <p class="trust-line">The public demo shows the decision surface. The private core runs the execution-control architecture.</p>
   </header>
 
-  <!-- Warning -->
+  <!-- Notice -->
   <div class="notice">
-    This is a public-safe demo shell. The private GENESIS core is not included.
+    This is a public-safe concept demo. It shows the decision surface only. The private GENESIS execution-control core is not included.
   </div>
+
+  <!-- Without / With GENESIS -->
+  <div class="comparison">
+    <div class="comparison-card without">
+      <p class="comparison-label">Without GENESIS</p>
+      <p class="comparison-body">
+        AI-generated code moves from suggestion to execution without a formal decision record,
+        approval boundary, or evidence trail. Changes run — or don't — with no governance layer.
+      </p>
+    </div>
+    <div class="comparison-card with">
+      <p class="comparison-label">With GENESIS</p>
+      <p class="comparison-body">
+        AI-generated changes pass through a pre-execution gate. Every change produces a decision:
+        ALLOW, REQUIRE_APPROVAL, or BLOCK. Every decision carries a reason. Every approval is tracked.
+      </p>
+    </div>
+  </div>
+
+  <!-- Demo framing -->
+  <p class="demo-framing">Try the public-safe decision surface</p>
 
   <!-- Scenario selector -->
   <div class="scenarios">
@@ -402,10 +612,15 @@
     <p class="cta-note">The demo evaluates visible public-safe patterns only.</p>
   </div>
 
-  <!-- Business boundary -->
-  <div class="boundary">
-    <strong>First simulated fix is free.</strong>
-    Additional fixes require a paid pilot or setup.
+  <!-- Honest boundary -->
+  <div class="boundary-honest">
+    <strong>About this demo</strong>
+    <p>
+      This demo is intentionally simple and public-safe. It shows the GENESIS decision model
+      without exposing the private execution core. It is not a production-grade security engine,
+      not a semantic analyzer, and not a replacement for code review.
+    </p>
+    <p>We are showing the decision surface clearly, not overclaiming the engine.</p>
   </div>
 
   <!-- Result -->
@@ -430,13 +645,13 @@
     </div>
   </div>
 
-  <!-- How it works -->
+  <!-- How it works + Decision model -->
   <div class="how">
     <p class="how-title">How this demo works</p>
     <div class="how-flow">
       <span class="how-step">AI-generated change</span>
       <span class="how-arrow">→</span>
-      <span class="how-step">safety check</span>
+      <span class="how-step">safety gate</span>
       <span class="how-arrow">→</span>
       <span class="how-step">ALLOW</span>
       <span class="how-arrow">/</span>
@@ -444,22 +659,80 @@
       <span class="how-arrow">/</span>
       <span class="how-step">BLOCK</span>
     </div>
+    <div class="decision-grid">
+      <div class="decision-card">
+        <p class="decision-card-label allow">ALLOW</p>
+        <p class="decision-card-text">The change appears safe. It is cleared to proceed in this public simulation.</p>
+      </div>
+      <div class="decision-card">
+        <p class="decision-card-label review">REQUIRE_APPROVAL</p>
+        <p class="decision-card-text">The change is ambiguous or risky. A human approval boundary is created before execution.</p>
+      </div>
+      <div class="decision-card">
+        <p class="decision-card-label block">BLOCK</p>
+        <p class="decision-card-text">The change matches a destructive pattern. It does not reach execution. The reason is recorded.</p>
+      </div>
+    </div>
     <p class="how-note">
-      This browser demo shows the concept only.
-      Production-grade evaluation requires the private GENESIS core.
+      The value is not only detection — it is the approval boundary and the evidence record.
+      The private GENESIS core provides the deeper execution-control architecture behind this model.
     </p>
   </div>
 
+  <!-- Private core -->
+  <section class="private-core">
+    <p class="section-eyebrow">Private Core</p>
+    <h2 class="section-title">What the private GENESIS core adds</h2>
+    <p class="section-body">
+      The public demo shows the decision surface. The private GENESIS core represents
+      the deeper execution-control architecture:
+    </p>
+    <div class="pipeline-visual">
+      intent<br>
+      &nbsp;&nbsp;→ action<br>
+      &nbsp;&nbsp;→ safety gate<br>
+      &nbsp;&nbsp;→ execution decision<br>
+      &nbsp;&nbsp;→ evidence<br>
+      &nbsp;&nbsp;→ verified result
+    </div>
+    <ul class="core-points">
+      <li>Workflow context and execution policy evaluation</li>
+      <li>Approval gates with structured evidence bundles</li>
+      <li>Audit trail for every AI-generated execution decision</li>
+      <li>Verified result tracking across the full execution cycle</li>
+      <li>Designed for AI coding workflows at scale — Cursor, Claude Code, Copilot, and similar agents</li>
+    </ul>
+  </section>
+
+  <!-- Why this matters -->
+  <section class="matters">
+    <p class="section-eyebrow">Context</p>
+    <h2 class="section-title">Why this matters for AI coding teams</h2>
+    <p class="section-body">
+      AI coding tools increase speed. Speed without execution control creates governance gaps.
+    </p>
+    <ul class="matters-list">
+      <li>An AI agent creates a hotfix at 11pm. It passes tests. It merges automatically. Who approved the execution logic?</li>
+      <li>A background agent rewrites an authentication module across 14 files. The diff is large. No REQUIRE_APPROVAL boundary triggered.</li>
+      <li>An AI tool modifies a deployment configuration. The change runs in CI. No execution decision was recorded. No evidence trail exists.</li>
+    </ul>
+    <p class="matters-close">
+      GENESIS creates the approval boundary and evidence trail that AI coding workflows currently lack.
+      This turns AI-assisted development from uncontrolled execution into governed execution.
+    </p>
+  </section>
+
   <!-- Feedback CTA -->
   <div class="feedback-cta">
-    <p>Have feedback or want early access?</p>
-    <a href="mailto:hello@aicodesafety.com?subject=AI%20Code%20Safety%20Gate%20Feedback">
+    <p>Building AI coding workflows at scale?</p>
+    <p>We want to hear what execution-control problems you are seeing.</p>
+    <a href="mailto:hello@aicodesafety.com?subject=AI%20Code%20Safety%20Gate%20%E2%80%94%20Execution%20Control%20Feedback">
       Email hello@aicodesafety.com
     </a>
   </div>
 
   <!-- Footer -->
-  <footer class="footer">Public demo</footer>
+  <footer class="footer">Public demo — decision surface only</footer>
 
 </div>
 <script>
