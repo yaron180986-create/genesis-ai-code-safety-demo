@@ -131,6 +131,28 @@ curl -sI https://aicodesafety.com | grep -E "content-security-policy|x-content-t
 
 ---
 
+## Final Scanner Compatibility Patch
+
+After the initial headers deployment, the Cyber Exposure Scanner still reported 3 findings. This section documents the follow-up patch.
+
+### X-Frame-Options: DENY
+
+Added for legacy browser and scanner compatibility. The CSP already includes `frame-ancestors 'none'` which provides the same clickjacking protection in modern browsers. `X-Frame-Options: DENY` is added explicitly because many scanners still check for the standalone header.
+
+### Root /security.txt fallback
+
+Created `/security.txt` at the site root with content identical to `/.well-known/security.txt`. Some security scanners (and the RFC 9116 spec itself) check `/security.txt` as a fallback path in addition to the canonical `/.well-known/security.txt`. The root file points `Canonical:` to the well-known path so there is no ambiguity about which is authoritative.
+
+### robots.txt
+
+Remained open and unchanged (`User-agent: * / Allow: /`). No modification was required.
+
+### Demo behavior
+
+Unchanged. No `index.html`, `scripts/`, `examples/`, or `launch/` files were modified.
+
+---
+
 ## Scope Confirmation
 
 - Private GENESIS core: **not touched**
