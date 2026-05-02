@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GENESIS AI Code Safety Gate — Public Demo</title>
+  <title>PROVE BY GENESIS — AI Code Safety Gate</title>
+  <meta name="description" content="The execution gate for AI-generated code. A pre-execution control layer that returns ALLOW, REQUIRE_APPROVAL, or BLOCK before AI-generated code runs." />
+  <meta property="og:title" content="PROVE BY GENESIS — AI Code Safety Gate" />
+  <meta property="og:description" content="The execution gate for AI-generated code. A pre-execution control layer for AI coding workflows." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aicodesafety.com" />
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -544,6 +550,42 @@
       color: var(--text-3);
       letter-spacing: 0.06em;
     }
+
+    /* ── Brand lockup ── */
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin-bottom: 1.5rem;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+    .brand-text {
+      text-align: left;
+      line-height: 1;
+    }
+    .brand-qualifier {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .brand-name {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #eef2fc;
+      line-height: 1;
+    }
   </style>
 </head>
 <body>
@@ -551,7 +593,13 @@
 
   <!-- Header -->
   <header class="header">
-    <p class="eyebrow">PROVE BY GENESIS</p>
+    <div class="brand-lockup">
+      <img src="assets/brand/prove-by-genesis-mark.svg" class="brand-mark" alt="" aria-hidden="true" />
+      <div class="brand-text">
+        <span class="brand-qualifier">Prove by</span>
+        <span class="brand-name">Genesis</span>
+      </div>
+    </div>
     <h1>AI Code Safety Gate</h1>
     <p class="category-statement">The execution gate for AI-generated code.</p>
     <p class="slogan">AI coding tools are executing. This is the gate.</p>

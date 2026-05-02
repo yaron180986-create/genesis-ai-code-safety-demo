@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" role="img" aria-label="PROVE BY GENESIS mark">
+  <!-- Gate boundary — the controlled execution perimeter -->
+  <rect x="2.5" y="2.5" width="35" height="35" rx="5.5"
+        stroke="#4a7fe0" stroke-width="2.5"/>
+  <!-- Gate control line — the pre-execution threshold
+       The gap between line-end and right wall is the controlled passage -->
+  <line x1="7" y1="26" x2="28" y2="26"
+        stroke="#4a7fe0" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
