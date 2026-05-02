@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400">
+  <defs>
+    <linearGradient id="flowbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="400" rx="12" fill="url(#flowbg)" />
+  <rect width="700" height="3" rx="0" fill="#58a6ff" />
+
+  <!-- Title -->
+  <text x="350" y="36" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="14" font-weight="700" fill="#8b949e" text-anchor="middle" letter-spacing="1">HOW IT WORKS</text>
+
+  <!-- Step 1: AI-generated code -->
+  <rect x="225" y="52" width="250" height="48" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
+  <text x="350" y="72" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="13" font-weight="700" fill="#f0f6fc" text-anchor="middle">AI-generated code</text>
+  <text x="350" y="90" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="11" fill="#6e7681" text-anchor="middle">Cursor · Copilot · Claude · any LLM</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="100" x2="350" y2="130" stroke="#30363d" stroke-width="2" />
+  <polygon points="350,138 344,124 356,124" fill="#30363d" />
+  <text x="370" y="122" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#6e7681">Before execution</text>
+
+  <!-- Step 2: Safety Gate -->
+  <rect x="200" y="138" width="300" height="52" rx="8" fill="#0d1f38" stroke="#58a6ff" stroke-width="2" />
+  <text x="350" y="160" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="14" font-weight="700" fill="#58a6ff" text-anchor="middle">Safety Gate</text>
+  <text x="350" y="180" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#58a6ff" text-anchor="middle" opacity="0.7">Pattern analysis · Risk classification · Decision</text>
+
+  <!-- Arrow down from gate -->
+  <line x1="350" y1="190" x2="350" y2="220" stroke="#30363d" stroke-width="2" />
+  <polygon points="350,228 344,214 356,214" fill="#30363d" />
+
+  <!-- Decision node -->
+  <text x="350" y="244" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" font-weight="700" fill="#8b949e" text-anchor="middle">Decision</text>
+
+  <!-- Three branch arrows -->
+  <!-- Left arrow to ALLOW -->
+  <line x1="290" y1="250" x2="120" y2="290" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="4,3" />
+  <!-- Center arrow to REQUIRE_APPROVAL -->
+  <line x1="350" y1="250" x2="350" y2="288" stroke="#d29922" stroke-width="1.5" stroke-dasharray="4,3" />
+  <!-- Right arrow to BLOCK -->
+  <line x1="410" y1="250" x2="580" y2="290" stroke="#f85149" stroke-width="1.5" stroke-dasharray="4,3" />
+
+  <!-- ALLOW box -->
+  <rect x="36" y="290" width="168" height="70" rx="8" fill="#0f2a1a" stroke="#3fb950" stroke-width="2" />
+  <text x="120" y="314" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="13" font-weight="700" fill="#3fb950" text-anchor="middle">ALLOW</text>
+  <text x="120" y="334" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#3fb950" text-anchor="middle" opacity="0.8">Change is safe.</text>
+  <text x="120" y="350" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#3fb950" text-anchor="middle" opacity="0.8">Proceed automatically.</text>
+
+  <!-- REQUIRE_APPROVAL box -->
+  <rect x="216" y="290" width="268" height="70" rx="8" fill="#2a1f00" stroke="#d29922" stroke-width="2" />
+  <text x="350" y="314" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="12" font-weight="700" fill="#d29922" text-anchor="middle">REQUIRE_APPROVAL</text>
+  <text x="350" y="334" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#d29922" text-anchor="middle" opacity="0.8">Human approval boundary.</text>
+  <text x="350" y="350" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#d29922" text-anchor="middle" opacity="0.8">Risky pattern detected.</text>
+
+  <!-- BLOCK box -->
+  <rect x="496" y="290" width="168" height="70" rx="8" fill="#2a0f0f" stroke="#f85149" stroke-width="2" />
+  <text x="580" y="314" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="13" font-weight="700" fill="#f85149" text-anchor="middle">BLOCK</text>
+  <text x="580" y="334" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#f85149" text-anchor="middle" opacity="0.8">Destructive changes</text>
+  <text x="580" y="350" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#f85149" text-anchor="middle" opacity="0.8">stopped.</text>
+
+  <!-- Footer note -->
+  <text x="350" y="388" font-family="ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace" font-size="10" fill="#6e7681" text-anchor="middle">Every decision is explicit. No silent failures. No unreviewed destructive changes.</text>
+</svg>
