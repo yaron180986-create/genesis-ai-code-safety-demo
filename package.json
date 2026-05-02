@@ -1,7 +1,7 @@
 {
   "name": "genesis-ai-code-safety-demo",
   "version": "0.1.0",
-  "description": "Public-safe demo for GENESIS AI Code Safety Gate.",
+  "description": "Public demo of a pre-execution safety gate for AI-generated code changes.",
   "main": "scripts/genesis-demo.js",
   "scripts": {
     "demo": "node scripts/genesis-demo.js examples/demo-danger.json",
@@ -19,6 +19,6 @@
     "cli",
     "demo"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": false
 }
