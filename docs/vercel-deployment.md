@@ -44,6 +44,4 @@ The private GENESIS core is not in this repo and is never deployed here.
 
 ## Notes
 
-- First simulated fix is free.
-- Additional fixes require a paid pilot or setup.
 - Demo runs entirely in the browser — no backend calls.

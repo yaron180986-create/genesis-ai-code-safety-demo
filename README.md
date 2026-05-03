@@ -2,7 +2,7 @@
   <img src="assets/README-hero.svg" alt="AI Code Safety Gate" width="900" />
 </p>
 
-# GENESIS — AI Code Safety Gate
+# PROVE BY GENESIS — AI Code Safety Gate
 
 **Pre-execution safety for AI-generated code.**
 
@@ -106,6 +106,7 @@ Run the scenarios:
 
 ```bash
 npm run demo            # module.exports = null → BLOCK
+npm run demo:safe       # safe helper function → ALLOW
 npm run demo:danger     # module.exports = null → BLOCK
 npm run demo:dead-code  # if(false) dead-code gate → REQUIRE_APPROVAL
 ```
